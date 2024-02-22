@@ -1,0 +1,60 @@
+html{
+    /*Esse truque é usado para que cada 1rem seja exatamente igual a 10px, facilitando os calculos*/
+    font-size: 62.5%;
+}
+
+body{
+    display: grid;
+    grid-template-areas: "header header header header"
+                         "hero hero hero hero"   
+                         "about about about about"
+                         "services services services services"
+                         "projects projects projects projects"
+                         "footer footer footer footer";
+    grid-template-columns: repeat(4,1fr);
+    font-size: 1.6rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+/*HEADER*/
+
+.header{
+    grid-area: header;
+    background-color: aqua;
+}
+
+/*HERO*/
+
+.hero{
+    grid-area: hero;
+    background-color: blue;
+}
+
+/*ABOUT*/
+
+.about{
+    grid-area: about;
+    background-color: blueviolet;
+}
+
+/*SERVICES*/
+
+.services{
+    grid-area: services;
+    background-color: brown;
+}
+
+/*PROJECTS*/
+
+.projects{
+    grid-area: projects;
+    background-color: cadetblue;
+}
+
+/*footer*/
+
+.footer{
+    grid-area: footer;
+    background-color: orange;
+}
