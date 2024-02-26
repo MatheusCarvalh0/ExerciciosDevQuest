@@ -21,14 +21,70 @@ body{
 
 .header{
     grid-area: header;
-    background-color: aqua;
 }
+
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    /*Essa altura minima é para caso o aparalho que esteja sendo utilizado tenha uma tela muito pequena, ele não diminua o header para algo minusculo*/
+    min-height: 75px;
+}
+
+.header-container h1{
+    font-size: 3rem;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.header-container a:hover h1{
+    color: coral;
+}
+
 
 /*HERO*/
 
 .hero{
     grid-area: hero;
-    background-color: blue;
+    /* o hight de 89vh é uma tática de design para mostrar ao usuário que ainda há mais conteúdo abaixo. Já que o normal de 100vh preenche toda a parte visível da tela*/
+    height: 89vh;
+    background: url(../images/lemons.jpg) center center no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero h2{
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 4rem;
+}
+
+.hero::after{
+    content: url(../images/seta_preta.png);
+    position: absolute;
+    height: 35px;
+    bottom: 40px;
+    /*agora para animar a seta*/
+    animation: downarrow 0.6s infinite alternate ease-in-out;
+}
+
+@-webkit-keyframes downarrow{
+    0%{-webkit-transform: translateY(0); opacity: 0.4;}
+    100%{-webkit-transform: translatey(0.4rem); opacity: 0.9;}
+}
+
+@media (max-width: 425px){
+    .hero{
+        height: 60vh;
+    }
+
+    .hero h2{
+        font-size: 2rem;
+    }
 }
 
 /*ABOUT*/
